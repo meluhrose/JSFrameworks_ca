@@ -40,6 +40,12 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/contact-page",
+      "regex": "^/contact\\-page(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact\\-page(?:/)?$"
     }
   ],
   "dataRoutes": [],

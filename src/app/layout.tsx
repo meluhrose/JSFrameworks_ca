@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "../index.css";
 
 export const metadata: Metadata = {
@@ -17,8 +18,8 @@ export default function RootLayout({
       <header>
         <nav>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/contact-page">Contact</a></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/contact-page">Contact</Link></li>
           </ul>
         </nav>
       </header>
