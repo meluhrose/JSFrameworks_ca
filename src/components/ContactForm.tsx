@@ -14,8 +14,8 @@ export default function ContactForm() {
    };
 
    return (
-    <form onSubmit={handleSubmit}>
-    <div style={{ display: "flex", flexDirection: "column", gap: "10px", border: "1px solid #ccc", padding: "20px", borderRadius: "5px" }}>
+    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", justifyContent: "center", margin: "20px 0", padding: "20px" }}>
+    <div style={{ border: "2px solid #8e7aa1", padding: "20px", borderRadius: "5px" }}>
         <label htmlFor="name">Full Name:</label>
         <input
           type="text"
@@ -23,7 +23,6 @@ export default function ContactForm() {
           name="name"
           placeholder="Jane Doe"
           required
-          style={{ width: "100%", marginBottom: "10px" }}
         />
         <label htmlFor="subject">Subject:</label>
         <input
@@ -32,7 +31,6 @@ export default function ContactForm() {
           name="subject"
           placeholder="Inquiry about services"
           required
-          style={{ width: "100%", marginBottom: "10px" }}
         />
         <label htmlFor="email">Email:</label>
         <input
@@ -41,7 +39,6 @@ export default function ContactForm() {
           name="email"
           placeholder="jane.doe@example.com"
           required
-          style={{ width: "100%", marginBottom: "10px" }}
         />
     
       <label htmlFor="message">Message:</label>
@@ -50,7 +47,9 @@ export default function ContactForm() {
         name="message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        required ></textarea>
+        required
+        style={{ width: "100%", marginBottom: "10px" }}
+      ></textarea>
 
       <button type="submit">Send Message</button>
     </div>

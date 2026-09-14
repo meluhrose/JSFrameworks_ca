@@ -28,9 +28,27 @@ async function HomePage() {
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                style: {
+                    display: "grid",
+                    gridTemplateColumns: "repeat(3, 1fr)",
+                    gap: "20px",
+                    listStyle: "none",
+                    padding: "20px"
+                },
                 children: response.data.map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                        style: {
+                            border: "2px solid #8e7aa1",
+                            padding: "20px",
+                            borderRadius: "50px",
+                            width: "80%",
+                            height: "auto"
+                        },
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                style: {
+                                    marginBottom: "10px",
+                                    color: "#5d4574"
+                                },
                                 children: product.title
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
@@ -39,7 +57,12 @@ async function HomePage() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: typeof product.image === "string" ? product.image : product.image.url,
-                                alt: typeof product.image === "string" ? product.title : product.image.alt
+                                alt: typeof product.image === "string" ? product.title : product.image.alt,
+                                style: {
+                                    maxWidth: "100%",
+                                    height: "auto",
+                                    borderRadius: "5px"
+                                }
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
                                 lineNumber: 13,
@@ -49,17 +72,27 @@ async function HomePage() {
                                 children: product.description
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 17,
+                                lineNumber: 18,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                style: {
+                                    fontWeight: "bold"
+                                },
                                 children: [
                                     "Price: $",
                                     product.price
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 18,
+                                lineNumber: 19,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                children: "Add to Cart"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/page.tsx",
+                                lineNumber: 20,
                                 columnNumber: 25
                             }, this)
                         ]
@@ -77,7 +110,7 @@ async function HomePage() {
                 children: "End of product list."
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 22,
+                lineNumber: 24,
                 columnNumber: 13
             }, this)
         ]

@@ -3,9 +3,9 @@
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
-  --border: #e5e4e7;
+  --border: #8e7aa1;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
+  --accent: #8e7aa1;
   --accent-bg: #aa3bff1a;
   --accent-border: #aa3bff80;
   --social-bg: #f4f3ec80;
@@ -31,6 +31,23 @@
     --lightningcss-light: ;
     --lightningcss-dark: initial;
   }
+}
+
+:root input {
+  border: 2px solid var(--border);
+  border-radius: 50px;
+  padding: 10px;
+  display: block;
+}
+
+:root button {
+  border: 2px solid var(--border);
+  background-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 10px;
+  display: block;
 }
 
 @media (max-width: 1024px) {

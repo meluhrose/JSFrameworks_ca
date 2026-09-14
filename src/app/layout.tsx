@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import NavigationMenu from "../components/NavigationMenu";
 import "../index.css";
 
 export const metadata: Metadata = {
@@ -16,12 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
       <header>
-        <nav>
-          <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/contact-page">Contact</Link></li>
-          </ul>
-        </nav>
+        <NavigationMenu />
       </header>
       <main>{children}</main>
       <footer>
