@@ -24,4 +24,4 @@
 :HL["https://static.noroff.dev/api/online-shop/7-shoes-white.jpg","image"]
 :HL["https://static.noroff.dev/api/online-shop/0-usb-plug.jpg","image"]
 :HL["https://static.noroff.dev/api/online-shop/13-wireless-keyboard.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"OxaxZ6Tm699nviIdCvv-I"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"fBmvIHbJeIhpXK0KZOXl9"}
