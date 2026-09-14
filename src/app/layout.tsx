@@ -13,7 +13,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-100">{children}</body>
+      <body>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact-page">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>{children}</main>
+      <footer>
+        <p>&copy; 2024 Online Shop</p>
+      </footer>
+      </body>
     </html>
   );
 }
