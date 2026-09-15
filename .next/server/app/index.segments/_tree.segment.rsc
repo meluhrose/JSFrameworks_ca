@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0rz29d491h3ep.css","style"]
+:HL["/_next/static/chunks/3pcosb25zz94t.css","style"]
 :HL["https://static.noroff.dev/api/online-shop/1-perfume-white.jpg","image"]
 :HL["https://static.noroff.dev/api/online-shop/12-toy-car.jpg","image"]
 :HL["https://static.noroff.dev/api/online-shop/3-headphones-beats.jpg","image"]
@@ -24,4 +24,4 @@
 :HL["https://static.noroff.dev/api/online-shop/7-shoes-white.jpg","image"]
 :HL["https://static.noroff.dev/api/online-shop/0-usb-plug.jpg","image"]
 :HL["https://static.noroff.dev/api/online-shop/13-wireless-keyboard.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"NsH_Yk_eAK0HvQNLJ2rGP"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"cex1QGMjHxcgDRbkPFRsf"}

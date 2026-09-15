@@ -1,10 +1,10 @@
 [
   {
     "route": "/contact-page",
-    "firstLoadUncompressedJsBytes": 463939,
+    "firstLoadUncompressedJsBytes": 463880,
     "firstLoadChunkPaths": [
       ".next\\static\\chunks\\2i9x4ug6o2s-8.js",
-      ".next\\static\\chunks\\0gm4l94lb6pmp.js",
+      ".next\\static\\chunks\\2v4l31-4xj653.js",
       ".next\\static\\chunks\\310vm2bl3xxpt.js",
       ".next\\static\\chunks\\2mmpezlrfmbu5.js",
       ".next\\static\\chunks\\27t_qfc-3_lzs.js",

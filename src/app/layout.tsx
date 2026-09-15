@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import NavigationMenu from "../components/NavigationMenu";
-import "../index.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Online Shop",

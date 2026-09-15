@@ -1,37 +1,56 @@
 import Link from "next/link";
 import { fetchProducts } from "../../features/products/services/productsAPI";
 
+
 export default async function ProductsPage() {
     const { data: products } = await fetchProducts();
 
     return (
         <main>
             <h1>Products</h1>
-            <ul style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px", listStyle: "none", padding: "20px" }}>
-                {products.map((product) => (
-                    <li key={product.id} style={{ border: "2px solid var(--border)", padding: "20px", borderRadius: "50px", width: "80%", height: "auto" }}>
-                        <h2 style={{ marginBottom: "10px", color: "var(--text-h)" }}>{product.title}</h2>
-                        <img
-                            src={typeof product.image === "string" ? product.image : product.image.url}
-                            alt={typeof product.image === "string" ? product.title : product.image.alt}
-                            style={{ maxWidth: "100%", height: "auto", borderRadius: "5px" }}
-                        />
-                        <p>{product.description.slice(0,100)}...</p>
-                        {product.discountedPrice !== undefined && product.discountedPrice < product.price ? (
-                            <p>
-                                <span style={{ textDecoration: "line-through", marginRight: "10px" }}>
-                                    ${product.price}
+            <ul className="grid grid-cols-3 list-none gap-[20px] p-[20px]">
+                {products.map((product) => {
+                    const hasDiscount = product.discountedPrice !== undefined && product.discountedPrice < product.price;
+                    const discountPercentage = hasDiscount && product.discountedPrice !== undefined
+                        ? Math.round(((product.price - product.discountedPrice) / product.price) * 100)
+                        : 0;
+
+                    return (
+                        <li key={product.id} className="relative h-auto w-[80%] rounded-[30px] border-2 border-[var(--border)] p-[20px]">
+                            {hasDiscount && (
+                                <span className="absolute right-[12px] top-[12px] rounded-full bg-[#c48be6] px-[10px] py-[6px] text-[12px] font-bold text-black">
+                                    -{discountPercentage}%
                                 </span>
-                                <strong>${product.discountedPrice}</strong>
-                            </p>
-                        ) : (
-                            <p style={{ fontWeight: "bold" }}>Price: ${product.price}</p>
-                        )}
-                        <Link href={`/products/${product.id}`} style={{ color: "var(--accent)", textDecoration: "underline", fontWeight: "bold", textAlign: "center" }}>View Details</Link>
-                    </li>
-                ))}
+                            )}
+
+                            <h2 className="mb-[10px] text-[var(--text-h)]">{product.title}</h2>
+                            <img
+                                src={typeof product.image === "string" ? product.image : product.image.url}
+                                alt={typeof product.image === "string" ? product.title : product.image.alt}
+                                className="h-auto max-w-full rounded-[5px]"
+                            />
+                            <div className="mt-[12px] flex flex-col gap-[10px]">
+                                <p className="font-bold">Rating: {"★".repeat(product.rating)}{"☆".repeat(5 - product.rating)}</p>
+                                <p>{product.description.slice(0, 100)}...</p>
+                                {hasDiscount ? (
+                                    <p>
+                                        <span className="mr-[10px] line-through">
+                                            ${product.price}
+                                        </span>
+                                        <strong>${product.discountedPrice}</strong>
+                                    </p>
+                                ) : (
+                                    <p className="font-bold">Price: ${product.price}</p>
+                                )}
+                                <Link href={`/products/${product.id}`} className="text-center font-bold text-[var(--accent)] underline">
+                                    View Details
+                                </Link>
+                            </div>
+                        </li>
+                    );
+                })}
             </ul>
-            <p>End of product list.</p>
+            <p className="mt-[20px]">End of product list.</p>
         </main>
     );
 }

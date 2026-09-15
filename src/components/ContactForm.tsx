@@ -14,8 +14,8 @@ export default function ContactForm() {
    };
 
    return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", justifyContent: "center", margin: "20px 0", padding: "20px" }}>
-    <div style={{ border: "2px solid #8e7aa1", padding: "20px", borderRadius: "5px" }}>
+    <form onSubmit={handleSubmit} className="flex flex-col justify-center my-20px p-20px">
+    <div className="border-2 border-#8e7aa1 p-20px rounded-5px">
         <label htmlFor="name">Full Name:</label>
         <input
           type="text"
