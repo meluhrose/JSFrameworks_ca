@@ -9,7 +9,7 @@ export async function fetchProducts(): Promise<ProductsResponse> {
         throw new Error("Failed to fetch products");
     }
 
-    return response.json();
+    return response.json() as Promise<ProductsResponse>;
 }
 
 export async function fetchProduct(
@@ -21,5 +21,5 @@ export async function fetchProduct(
         throw new Error("Failed to fetch product");
     }
 
-    return response.json();
+    return response.json() as Promise<ProductResponse>;
 }

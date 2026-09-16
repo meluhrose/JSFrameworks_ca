@@ -3,7 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const menuItems = [
+interface MenuItem {
+    href: string;
+    label: string;
+}
+
+const menuItems: MenuItem[] = [
     { href: "/", label: "Home" },
     { href: "/contact-page", label: "Contact" },
 ];
@@ -12,15 +17,13 @@ const menuItems = [
     const pathname = usePathname();
 
     return (
-        <nav>
-            <ul style={{ display: "flex", gap: "20px", listStyle: "none", padding: "20px" }}>
+        <nav className="bg-[var(--accent-bg)] border-b-2 border-[var(--border)]">
+            <ul className="flex justify-center gap-[20px] list-none p-[20px]">
                 {menuItems.map((item) => (
-                    <li key={item.href} style={{ display: "inline-block" }}>
-                        <Link href={item.href} style={{
-                  fontWeight: pathname === item.href ? "bold" : "normal",
-                  textDecoration: pathname === item.href ? "underline" : "none",
-                  color: pathname === item.href ? "var(--accent)" : "inherit",
-                }}>
+                    <li key={item.href} className="text-xxl">
+                        <Link href={item.href} className={`${
+                            pathname === item.href ? "font-bold underline text-[var(--accent)]" : "text-inherit"
+                        }`}>
                             {item.label}
                         </Link>
                     </li>

@@ -1,11 +1,16 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { fetchProduct } from "../../../features/products/services/productsAPI";
+import type { Product } from "../../../features/products/types";
 
-export default async function SingleProductPage({ params }: { params: Promise<{ id: string }> }) {
+interface SingleProductPageProps {
+    params: Promise<{ id: string }>;
+}
+
+export default async function SingleProductPage({ params }: SingleProductPageProps) {
     const { id } = await params;
 
-    let product;
+    let product: Product;
     try {
         ({ data: product } = await fetchProduct(id));
     } catch {
@@ -57,13 +62,13 @@ export default async function SingleProductPage({ params }: { params: Promise<{ 
                 </div>
             )}
             <button>Add to Cart</button>
-            <Link href="/products" className="font-bold text-[var(--accent)] underline">Back to Products</Link>
+            <Link href="/" className="font-bold text-[var(--accent)] underline">Back to Products</Link>
             </div>
             <div>
                 <h2>Reviews</h2>
                 {product.reviews && product.reviews.length > 0 ? (
                     <ul>
-                        {product.reviews.map((review: { id: string; username: string; rating: number; description: string }) => (
+                        {product.reviews.map((review) => (
                             <li key={review.id}>
                                 <p><strong>{review.username}</strong> - {review.rating}/5</p>
                                 <p>{review.description}</p>

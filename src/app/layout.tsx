@@ -20,7 +20,7 @@ export default function RootLayout({
       </header>
       <main>{children}</main>
       <footer>
-        <p>&copy; 2024 Online Shop</p>
+        <p>&copy; 2026 Online Shop</p>
       </footer>
       </body>
     </html>

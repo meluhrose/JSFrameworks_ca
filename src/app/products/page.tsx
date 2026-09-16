@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { fetchProducts } from "../../features/products/services/productsAPI";
+import SearchBar from "./components/SearchBar";
 
 
 export default async function ProductsPage() {
@@ -7,7 +8,7 @@ export default async function ProductsPage() {
 
     return (
         <main>
-            <h1>Products</h1>
+            <SearchBar products={products} />
             <ul className="grid grid-cols-3 list-none gap-[20px] p-[20px]">
                 {products.map((product) => {
                     const hasDiscount = product.discountedPrice !== undefined && product.discountedPrice < product.price;
@@ -50,7 +51,7 @@ export default async function ProductsPage() {
                     );
                 })}
             </ul>
-            <p className="mt-[20px]">End of product list.</p>
+            
         </main>
     );
 }

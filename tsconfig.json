@@ -29,7 +29,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "allowJs": true,
+    "allowJs": false,
     "esModuleInterop": true,
     "isolatedModules": true
   },
