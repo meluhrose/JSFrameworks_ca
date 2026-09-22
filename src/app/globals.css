@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #8e7aa1;
-  --code-bg: #f4f3ec;
-  --accent: #8e7aa1;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --text: #0D1821;
+  --text-h: #0D1821;
+  --text-background: #FFFFFF;
+  --bg: #F0F4EF;
+  --accent-main: #344966;
+  --accent-secondary: #fff07c;
   --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
-}
+} 
 
 main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -42,7 +42,7 @@ h2 {
 }
 
 h1 {
-  font-size: 56px;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   letter-spacing: -1.68px;
   margin: 32px 0;
 }
@@ -58,7 +58,7 @@ p {
   margin: 0;
 }
 
-alert {
+.alert {
   color: red;
   font-weight: 500;
   margin: 8px 0;
@@ -72,17 +72,33 @@ label {
 }
 
 input,
-button, textarea {
+textarea {
   display: block;
-  border: 2px solid var(--border);
+  border: 2px solid var(--accent-main);
   padding: 10px;
-  margin: 8px;
-  border-radius: 50px;
-
+  margin: 0;
+  border-radius: 8px;
 }
 
 button {
-  background-color: var(--accent);
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: var(--accent-main);
+  color: var(--text-background);
+  font-weight: 500;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent-secondary);
+  color: var(--text);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Toaster } from "sonner"
 import NavigationMenu from "../components/NavigationMenu";
+import Footer from "../components/footer";
+import { CartProvider } from "../features/cart/context/CartContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,13 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <header>
-        <NavigationMenu />
-      </header>
-      <main>{children}</main>
-      <footer>
-        <p>&copy; 2026 Online Shop</p>
-      </footer>
+      <CartProvider>
+        <header>
+          <NavigationMenu />
+        </header>
+        <main>{children}</main>
+        <Footer />
+      </CartProvider>
+      <Toaster richColors position="bottom-center" />
       </body>
     </html>
   );

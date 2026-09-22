@@ -26,25 +26,24 @@ export default function SearchBar({ products }: SearchBarProps) {
         });
 
     return (
-        <div className="relative mb-[20px] w-full max-w-[600px]">
+            <div className="flex w-full justify-center mb-[20px] flex-col">
             <input
                 type="text"
                 placeholder="Search products..."
                 value={search}
                 onChange={(event) => setSearch(event.target.value)}
                 aria-label="Search products"
-                className="w-full rounded-[10px] border-2 border-[var(--border)] p-[10px]"
             />
 
             {search.trim() !== "" && (
-                <div className="absolute left-0 right-0 top-full z-10 mt-[4px] rounded-[10px] border-2 border-[var(--border)] bg-[var(--bg)] p-[8px] shadow-[var(--shadow)]">
+                <div className="relative mb-[20px] py-[8px] flex w-full flex-col border-[2px] border-[var(--accent-main)] rounded-[10px] bg-[var(--bg)] p-[8px] shadow-[var(--shadow)]">
                     {filteredProducts.length > 0 ? (
                         <ul className="m-0 list-none p-0">
                             {filteredProducts.map((product) => (
                                 <li key={product.id}>
                                     <Link
                                         href={`/products/${product.id}`}
-                                        className="block rounded-[6px] p-[10px] text-[var(--text-h)] hover:bg-[var(--accent-bg)]"
+                                        className="hover:bg-[var(--accent-secondary)] text-[var(--text-h)] block rounded-[10px] p-[10px]"
                                     >
                                         {product.title}
                                     </Link>

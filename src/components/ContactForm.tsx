@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from "react";
+import { toast } from "sonner";
 import { validateContactForm } from "../features/contact/validation/contactValidation";
 import { useRouter } from "next/navigation";
 import type { ContactFormData, ContactFormErrors } from "@/features/contact/types";
 
 export default function ContactForm() {
     const router = useRouter();
+
     const [formData, setFormData] = useState<ContactFormData>({
         name: "",
         subject: "",
@@ -25,13 +27,14 @@ export default function ContactForm() {
 
     if (Object.keys(validationErrors).length === 0) {
         console.log(formData.message);
+        toast.success("Message sent successfully!");
         router.push("/");
     }
    };
 
    return (
-    <form onSubmit={handleSubmit} className="flex flex-col justify-center my-20px p-20px">
-    <div className="border-2 border-#8e7aa1 p-20px rounded-5px">
+    <form onSubmit={handleSubmit} noValidate className="flex justify-center items-center my-[40px] px-[20px]">
+    <div className="w-[80%] border-2 border-[var(--accent-main)] p-[20px] rounded-[12px]">
         <label htmlFor="name">Full Name:</label>
         <input
           type="text"
@@ -43,8 +46,9 @@ export default function ContactForm() {
           aria-invalid={Boolean(errors.name)}
           aria-describedby={errors.name ? "name-error" : undefined}
           required
+          className="w-4/5 mx-auto"
         />
-        {errors.name && <p id="name-error">{errors.name}</p>}
+        {errors.name && <p id="name-error" className="text-red-500 p-2 text-left">{errors.name}</p>}
         <label htmlFor="subject">Subject:</label>
         <input
           type="text"
@@ -56,8 +60,9 @@ export default function ContactForm() {
           aria-invalid={Boolean(errors.subject)}
           aria-describedby={errors.subject ? "subject-error" : undefined}
           required
+          className="w-4/5 mx-auto"
         />
-        {errors.subject && <p id="subject-error">{errors.subject}</p>}
+        {errors.subject && <p id="subject-error" className="text-red-500 p-2 text-left">{errors.subject}</p>}
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -69,8 +74,9 @@ export default function ContactForm() {
           aria-invalid={Boolean(errors.email)}
           aria-describedby={errors.email ? "email-error" : undefined}
           required
+          className="w-4/5 mx-auto"
         />
-        {errors.email && <p id="email-error">{errors.email}</p>}
+        {errors.email && <p id="email-error" className="text-red-500 p-2 text-left">{errors.email}</p>}
     
       <label htmlFor="message">Message:</label>
       <textarea
@@ -81,9 +87,9 @@ export default function ContactForm() {
         aria-invalid={Boolean(errors.message)}
         aria-describedby={errors.message ? "message-error" : undefined}
         required
-        className="w-4/5 mb-2.5"
+        className="w-4/5 mb-2.5 p-2 border-2 border-[var(--accent-main)] rounded-[12px]"
       ></textarea>
-      {errors.message && <p id="message-error">{errors.message}</p>}
+      {errors.message && <p id="message-error" className="text-red-500 p-2 text-left">{errors.message}</p>}
 
       <button type="submit">Send Message</button>
     </div>

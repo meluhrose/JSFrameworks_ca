@@ -2,8 +2,8 @@ import type { ProductsResponse, ProductResponse } from "../types";
 
 const API_URL = "https://v2.api.noroff.dev/online-shop";
 
-export async function fetchProducts(): Promise<ProductsResponse> {
-    const response = await fetch(API_URL);
+export async function fetchProducts(page = 1): Promise<ProductsResponse> {
+    const response = await fetch(`${API_URL}?page=${page}`);
 
     if (!response.ok) {
         throw new Error("Failed to fetch products");

@@ -11,7 +11,8 @@ export function validateContactForm(data: ContactFormData): ContactFormErrors {
         errors.subject = "Subject must be at least 3 characters long";
     }
 
-    if (data.email.includes("@") === false) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(data.email.trim())) {
         errors.email = "Email is invalid";
     }
 
