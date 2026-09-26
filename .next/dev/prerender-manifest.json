@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "d0ecaf05385c133da3fe02f023437346",
-    "previewModeSigningKey": "5c217b66da1eb959f4a4e048275b0c63b5bdc78bde4674e8f1374f573bfe495a",
-    "previewModeEncryptionKey": "c6670538b0c996743643ca3866c5cc0868a785b1f37c1bdb02707eefcaed5509"
-  }
-}
+{"version":4,"routes":{"/products/109566af-c5c2-4f87-86cb-76f36fb8d378":{},"/products/10d6cc02-b282-46bb-b35c-dbc4bb5d91d9":{},"/products/159fdd2f-2b12-46de-9654-d9139525ba87":{},"/products/1fd1ddca-0d38-4e41-aa62-a1a7a57cf4b5":{},"/products/31e3a66f-2dbe-47ae-b80d-d9e5814f3e32":{},"/products/3b43b2e4-62b0-4c02-9166-dffa46a0388c":{},"/products/3f328f02-715e-477f-9738-7934af4bc5b0":{},"/products/414f5b60-c574-4a2f-a77b-3956b983495b":{},"/products/5391e16f-d88b-4747-a989-f17fb178459d":{},"/products/5aa2e388-8dfb-4d70-b031-3732d8c6771a":{},"/products/7238397e-0ee5-4d5c-9e82-bda666dd2470":{},"/products/7c6353ec-17a9-4a4d-a9d7-6997465367e1":{},"/products/83111322-05a9-4a93-bc81-7d6b58f1a707":{},"/products/894ca18f-9725-40b3-9429-1420ee2054da":{},"/products/95dc28de-9ef6-4c67-808b-6431a5de43e8":{},"/products/9be4812e-16b2-44e6-bc55-b3aef9db2b82":{},"/products/be5e376d-e657-4035-8916-1580c52f4e98":{},"/products/c0d245f1-58fa-4b15-aa0c-a704772a122b":{},"/products/ce5b64e3-440d-46e5-952f-bfdbad8a48d2":{},"/products/f2d44fba-09a7-4ccb-9ceb-a6212bf5c213":{},"/products/f5d453d1-e811-4225-81ac-cee54ef0384b":{},"/products/f6712e3b-8050-4841-bd64-f332a48f7566":{},"/products/f7bdd538-3914-409d-bd71-8ef962a9a9dd":{},"/products/f99cafd2-bd40-4694-8b33-a6052f36b435":{},"/products/fbf07ebe-9f9a-4895-8a16-567acbbeef4e":{}},"dynamicRoutes":{"/products/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/products/[id]","routeRegex":"^\\/products\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"45ffbf49ec033ae66e30a5be67ec022e","previewModeSigningKey":"2a3a3e7622bab803746dc43da752873b506fe1f429b3f6d0123293a633b1fc18","previewModeEncryptionKey":"2c98d0092c49eb530a83e77b003161812508a1cd20e94add74de7ca2220aff2b"}}
