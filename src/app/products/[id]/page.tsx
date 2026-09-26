@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { fetchProduct } from "../../../features/products/services/productsAPI";
+import {
+  fetchProduct,
+  fetchProducts,
+} from "../../../features/products/services/productsAPI";
 import type { Product } from "../../../features/products/types";
 import AddToCartButton from "../../../components/AddToCartButton";
 
 interface SingleProductPageProps {
   params: Promise<{ id: string }>;
+}
+
+export async function generateStaticParams() {
+  const { data: products } = await fetchProducts();
+
+  return products.map((product) => ({ id: product.id }));
 }
 
 export default async function SingleProductPage({

@@ -4,15 +4,14 @@ import ProductsGrid from "./components/ProductsGrid";
 import Pagination from "../../components/Pagination";
 
 interface ProductsPageProps {
-    searchParams?: Promise<{ page?: string }>;
+    searchParams?: { page?: string };
 }
 
 export default async function ProductsPage({ searchParams }: ProductsPageProps) {
-const { page } = (await searchParams) ?? {};
+    const page = searchParams?.page;
+    const currentPage = Number(page) || 1;
 
-const currentPage = Number(page) || 1;
-
-const { data: products, meta } = await fetchProducts(currentPage);
+    const { data: products, meta } = await fetchProducts(currentPage);
 
 
     return (
