@@ -87,7 +87,7 @@ export default function ProductsGrid({ products }: ProductsGridProps) {
                                     <p className="font-bold">Price: ${product.price}</p>
                                 )}
                                 {/* Link to view product details */}
-                                <Link href={`/products/${product.id}`} className="rounded-[12px] px-[10px] py-[5px] text-center font-bold text-[var(--text)] hover:bg-[var(--accent-secondary)]">
+                                <Link href={`/products/${product.id}`} className="rounded-[50px] px-[10px] py-[5px] text-center font-bold text-[var(--text)] hover:bg-[var(--accent-secondary)]">
                                     View Details
                                 </Link>
                             </div>

@@ -113,7 +113,7 @@ export default async function SingleProductPage({
           {/* Back link */}
           <Link
             href="/"
-            className="rounded-[12px] px-[10px] py-[5px] text-center font-bold text-[var(--text)] hover:bg-[var(--accent-secondary)]"
+            className="rounded-[50px] px-[10px] py-[5px] text-center font-bold text-[var(--text)] hover:bg-[var(--accent-secondary)]"
           >
             Back to Products
           </Link>
