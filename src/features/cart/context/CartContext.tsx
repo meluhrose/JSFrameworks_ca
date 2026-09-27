@@ -1,13 +1,37 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import type { CartContextValue, CartItem } from "../types";
 import type { Product } from "@/features/products/types";
 
 export const CartContext = createContext<CartContextValue | undefined>(undefined);
 
+const CART_STORAGE_KEY = "online-shop-cart";
+
 export function CartProvider({ children }: Readonly<{ children: React.ReactNode }>) {
     const [cart, setCart] = useState<CartItem[]>([]);
+    const [hasLoadedCart, setHasLoadedCart] = useState(false);
+
+    useEffect(() => {
+        try {
+            const storedCart = window.localStorage.getItem(CART_STORAGE_KEY);
+            const savedCart = storedCart ? JSON.parse(storedCart) as CartItem[] : [];
+
+            queueMicrotask(() => {
+                setCart(savedCart);
+                setHasLoadedCart(true);
+            });
+        } catch {
+            window.localStorage.removeItem(CART_STORAGE_KEY);
+            queueMicrotask(() => setHasLoadedCart(true));
+        }
+    }, []);
+
+    useEffect(() => {
+        if (hasLoadedCart) {
+            window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+        }
+    }, [cart, hasLoadedCart]);
 
     const addToCart = (product: Product) => {
         setCart((currentCart) => {
